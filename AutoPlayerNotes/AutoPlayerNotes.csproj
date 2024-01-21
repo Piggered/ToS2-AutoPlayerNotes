@@ -1,0 +1,61 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net481</TargetFramework>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+        <LangVersion>10.0</LangVersion>
+
+        <SalemModLoaderUrl>https://github.com/Curtbot9000/SalemModLoader/releases/latest/download/SalemModLoader.dll</SalemModLoaderUrl>
+        <GameInstallPath>G:\Program Files (x86)\Steam\steamapps\common\Town of Salem 2</GameInstallPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.4.1">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="HarmonyX" Version="2.10.2"/>
+        <Reference Include="Assembly-CSharp" Publicize="true">
+            <HintPath>lib\Assembly-CSharp.dll</HintPath>
+        </Reference>
+        <Reference Include="BepInEx">
+            <HintPath>lib\BepInEx.dll</HintPath>
+        </Reference>
+        <Reference Include="SalemModLoader">
+            <HintPath>lib\SalemModLoader.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine">
+            <HintPath>lib\UnityEngine.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AnimationModule">
+            <HintPath>lib\UnityEngine.AnimationModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule">
+            <HintPath>lib\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UI">
+            <HintPath>lib\UnityEngine.UI.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="res\AutoPlayerNotes.modinfo.json"/>
+        <EmbeddedResource Include="res\AutoPlayerNotes.thumbnail.png" />
+    </ItemGroup>
+
+    <Target Name="PrepareBuildFiles" AfterTargets="BeforeBuild">
+        <DownloadFile SourceUrl="$(SalemModLoaderUrl)" DestinationFolder="$(MSBuildThisFileDirectory)\lib" SkipUnchangedFiles="true">
+            <Output TaskParameter="DownloadedFile" ItemName="Content"/>
+        </DownloadFile>
+
+        <Copy SourceFiles="$(GameInstallPath)\TownOfSalem2_Data\Managed\Assembly-CSharp.dll" DestinationFolder="$(MSBuildThisFileDirectory)\lib"/>
+        <Copy SourceFiles="$(GameInstallPath)\BepInEx\core\BepInEx.dll" DestinationFolder="$(MSBuildThisFileDirectory)\lib"/>
+        <Copy SourceFiles="$(GameInstallPath)\TownOfSalem2_Data\Managed\Unity.TextMeshPro.dll" DestinationFolder="$(MSBuildThisFileDirectory)\lib"/>
+        <Copy SourceFiles="$(GameInstallPath)\TownOfSalem2_Data\Managed\UnityEngine.dll" DestinationFolder="$(MSBuildThisFileDirectory)\lib"/>
+        <Copy SourceFiles="$(GameInstallPath)\TownOfSalem2_Data\Managed\UnityEngine.AnimationModule.dll" DestinationFolder="$(MSBuildThisFileDirectory)\lib"/>
+        <Copy SourceFiles="$(GameInstallPath)\TownOfSalem2_Data\Managed\UnityEngine.CoreModule.dll" DestinationFolder="$(MSBuildThisFileDirectory)\lib"/>
+        <Copy SourceFiles="$(GameInstallPath)\TownOfSalem2_Data\Managed\UnityEngine.UI.dll" DestinationFolder="$(MSBuildThisFileDirectory)\lib"/>
+    </Target>
+
+</Project>

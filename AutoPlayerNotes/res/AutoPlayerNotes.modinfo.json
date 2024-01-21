@@ -1,0 +1,91 @@
+{
+  "HarmonyId": "me.piggered.tos2.autoplayernotes",
+  "DisplayName": "Auto Player Notes",
+  "Authors": [
+    "Piggered"
+  ],
+  "Description": "Automatically writes down some confirmed roles in the Player Notes",
+  "Version": "1.0.0",
+  "Platforms": [
+    "Windows",
+    "Mac"
+  ],
+  "RequiredMods": [],
+  "ConflictingMods": [],
+  "Settings": {
+    "CheckboxSettings": [
+      {
+        "Name": "Auto Toggle Player Notes",
+        "SettingID": "AutoTogglePlayerNotes",
+        "Description": "Automatically toggle Player Notes at the start of the game",
+        "DefaultValue": true,
+        "Available": true,
+        "AvailableInGame": true
+      },
+      {
+        "Name": "Auto Hide Dead Players",
+        "SettingID": "AutoHideDeadPlayers",
+        "Description": "Automatically tick Hide Dead Players at the start of the game",
+        "DefaultValue": true,
+        "Available": true,
+        "AvailableInGame": true
+      },
+      {
+        "Name": "Auto Note Self",
+        "SettingID": "AutoNoteSelf",
+        "Description": "Automatically note yourself in the Player Notes at the start of the game",
+        "DefaultValue": true,
+        "Available": true,
+        "AvailableInGame": true
+      },
+      {
+        "Name": "Auto Note Team",
+        "SettingID": "AutoNoteTeam",
+        "Description": "Automatically note your teammates in the Player Notes at the start of the game",
+        "DefaultValue": true,
+        "Available": true,
+        "AvailableInGame": true
+      },
+      {
+        "Name": "Auto Note Town Reveals",
+        "SettingID": "AutoNoteTownReveals",
+        "Description": "Automatically note townies in the Player Notes when they reveal themself (e.g., Mayor)",
+        "DefaultValue": true,
+        "Available": true,
+        "AvailableInGame": true
+      },
+      {
+        "Name": "Auto Note Potion Reveals",
+        "SettingID": "AutoNotePotionReveals",
+        "Description": "Automatically note roles revealed by the Potion Master in the Player Notes",
+        "DefaultValue": false,
+        "Available": false,
+        "AvailableInGame": true
+      },
+      {
+        "Name": "Auto Note Witch Controls",
+        "SettingID": "AutoNoteWitchControls",
+        "Description": "Automatically note roles in the Player Notes when you control them as the Witch",
+        "DefaultValue": false,
+        "Available": false,
+        "AvailableInGame": true
+      },
+      {
+        "Name": "Auto Note Ritualist Backfires",
+        "SettingID": "AutoNoteRitualistBackfires",
+        "Description": "Automatically note the Ritualist in the Player Notes when they fail miserably",
+        "DefaultValue": false,
+        "Available": false,
+        "AvailableInGame": true
+      },
+      {
+        "Name": "Faction Headers",
+        "SettingID": "FactionHeaders",
+        "Description": "Add Faction headers for noting confirmed roles that are still unidentified (incompatible with Will Presets)",
+        "DefaultValue": false,
+        "Available": false,
+        "AvailableInGame": false
+      }
+    ]
+  }
+}
