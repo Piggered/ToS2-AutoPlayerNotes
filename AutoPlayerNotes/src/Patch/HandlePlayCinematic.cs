@@ -21,7 +21,7 @@ public class HandlePlayCinematic
         Mod.Logger.LogInfo($"Cinematic {entry.type} is playing", "HandlePlayCinematic");
         Service.Game.Cinematic.OnCinematicWillEnd += HandleCinematicEnd;
 
-        // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
+        // ReSharper disable once SwitchStatementMissingSomeEnumCasesNoDefault
         switch (entry.type)
         {
             case CinematicType.DeputyKill:
@@ -59,9 +59,6 @@ public class HandlePlayCinematic
 
                 break;
             }
-
-            default:
-                return;
         }
     }
 

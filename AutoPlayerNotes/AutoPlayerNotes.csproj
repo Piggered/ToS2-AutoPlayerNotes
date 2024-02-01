@@ -40,8 +40,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <EmbeddedResource Include="res\AutoPlayerNotes.modinfo.json"/>
-        <EmbeddedResource Include="res\AutoPlayerNotes.thumbnail.png" />
+        <EmbeddedResource Include="res\$(MSBuildProjectName).modinfo.json"/>
+        <EmbeddedResource Include="res\$(MSBuildProjectName).thumbnail.png" />
     </ItemGroup>
 
     <Target Name="PrepareBuildFiles" AfterTargets="BeforeBuild">
